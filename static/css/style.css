@@ -1,35 +1,142 @@
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #172554;
-    color: white;
-    text-align: center;
-}
-
-header {
-    padding: 25px;
-    background-color: #1e3a8a;
-}
-
-h1 {
-    font-size: 38px;
-    margin-bottom: 5px;
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #06161f;
+  color: #eafffb;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #game-container {
-    margin: 30px auto;
-    max-width: 1100px;
+  position: relative;
+  width: 960px;
+  max-width: 100vw;
+  box-shadow: 0 0 40px rgba(46, 230, 214, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #15414f;
 }
 
-#gameCanvas {
-    width: 100%;
-    max-width: 1000px;
-    background-color: #93c5fd;
-    border: 4px solid white;
-    border-radius: 12px;
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #0b1f2a;
+}
+
+#overlay-root {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(3, 12, 17, 0.82);
+  backdrop-filter: blur(2px);
+}
+
+#overlay-root.visible {
+  display: flex;
+}
+
+.panel {
+  background: #0e2733;
+  border: 1px solid #1d4d5b;
+  border-radius: 10px;
+  padding: 28px 36px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+}
+
+.panel h1 {
+  margin: 0 0 8px;
+  color: #2ee6d6;
+  font-size: 28px;
+}
+
+.panel h2 {
+  margin: 18px 0 8px;
+  font-size: 16px;
+  color: #9fd8d0;
+}
+
+.panel p {
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+.panel .dim {
+  color: #7fa6a0;
+  font-style: italic;
+}
+
+.panel ol {
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 22px;
+  max-width: 260px;
+}
+
+.score-line {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffd447;
+  margin: 12px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px 6px 0;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #06201d;
+  background: #2ee6d6;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  background: #4ff3e4;
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #cfeeea;
+  border: 1px solid #2ee6d6;
+}
+
+.controls-legend {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #9fd8d0;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #9fd8d0;
+}
+
+#name-input {
+  display: block;
+  margin: 8px auto 0;
+  padding: 8px 10px;
+  width: 80%;
+  border-radius: 6px;
+  border: 1px solid #1d4d5b;
+  background: #06161f;
+  color: #eafffb;
+  font-size: 14px;
+  text-align: center;
 }

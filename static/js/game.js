@@ -55,7 +55,7 @@ const Game = (() => {
     return `
       <div class="panel">
         <h1>Pac-Platformer</h1>
-        <p>An original round hero, three hand-built stages, zero ghosts.</p>
+        <p>An original round hero, challening parkour, adventure awaits!</p>
         <button id="start-btn" class="btn">Start Game</button>
         <h2>High Scores</h2>
         ${scoresHtml}
