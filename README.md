@@ -65,7 +65,7 @@ Loads level data as JSON through a REST API (/api/levels/<n>), rejecting any mal
 
 Tracks and persists the high-score leaderboard to a local file (scores.json), 
 
-validating and sanitizing submitted scores (/api/scores, /api/score).
+validating and sanitizing submitted scores (/api/scores).
 
 Handles all routing and returns proper JSON error responses for bad requests or missing data, rather than exposing raw server errors.
 
