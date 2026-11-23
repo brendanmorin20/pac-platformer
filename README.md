@@ -16,7 +16,7 @@ python --version
 pip --version
 
 3. Installing Python Dependencies
-Clone or download this repository, then open a terminal in the project folder:
+- Clone or download this repository, then open a terminal in the project folder:
 git clone https://github.com/brendanmorin20/pac-platformer.git
 cd pac-platformer
 Create a virtual environment (keeps this project's packages separate from the rest of your system):
@@ -50,11 +50,13 @@ R	Restart the current level
 P or Esc	Pause / resume
 
 7. How to Play
-From the title screen, click Start Game. Move your character across each level, collecting coins and avoiding hazards and falls. Each level has a visible progress bar, a lives counter, and a coin counter. You have 3 lives; touching a hazard or falling off the level costs a life and respawns you at the last checkpoint you passed. Run out of lives and it's game over, with the option to retry the level. Reach the goal flag at the end of a level to complete it and move to the next one. Clear all three levels to win the game and submit your score to the high-score leaderboard on the title screen.
+From the title screen, click Start Game. Move your character across each level, collecting coins and avoiding hazards and falls. Each level has a visible progress bar, a lives counter, and a coin counter. You have 3 lives. If you touch a hazard or fall off the level it costs a life and respawns you at the last checkpoint you passed. Run out of lives and it's game over. You have to start again. Reach the goal flag at the end of a level to complete it and move to the next one. Clear all three levels to win the game and submit your score to the high-score leaderboard on the title screen.
+
 
 8. How the Levels Work
 
-Each level is defined in a JSON file (levels/level1.json, level2.json, level3.json) There are moving platforms, hazards, coins, checkpoints, and the goal location. The Flask backend validates this data server-side before sending it to the browser, so malformed level data is caught before it ever reaches the game.
+Each level is defined is a JSON file (levels/level1.json, level2.json, level3.json) There are moving platforms, hazards, coins, checkpoints, and the goal location.
+
 
 9. What Python Does in This Application
 
@@ -63,14 +65,13 @@ Python (via Flask) runs the entire backend of this game:
 Serves the main webpage and all static assets (JavaScript, CSS).
 Loads level data as JSON through a REST API (/api/levels/<n>), rejecting any malformed level file before it reaches the browser.
 
-Tracks and persists the high-score leaderboard to a local file (scores.json), 
+Tracks the high-score leaderboard to a local file (scores.json), 
 
-validating and sanitizing submitted scores (/api/scores).
-
-Handles all routing and returns proper JSON error responses for bad requests or missing data, rather than exposing raw server errors.
+validating (/api/scores).
 
 The actual gameplay rendering, physics, and controls run client-side in JavaScript in the browser, while Python/Flask is responsible for serving the application and managing its data.
 
+
 10. AI Tools Used
 
-This project was built with the assistance of Claude, which helped write the Python/Flask backend and JavaScript frontend code. Helped troubloshoot platforms, coins, and hazard placements based on testing and feedback. 
+This project was built with the assistance of Claude, which helped write the Python/Flask backend and JavaScript frontend code. Helped troubleshoot platforms, coins, and hazard placements based on testing and feedback. 
